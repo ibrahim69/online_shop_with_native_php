@@ -2,6 +2,7 @@
   // include_once for access all code in folder
   include_once("function/helper.php");
 
+  // isset -> cek variabel yang sudah diset.
   $page = isset($_GET['page']) ? $_GET['page'] : false;
 ?>
 
