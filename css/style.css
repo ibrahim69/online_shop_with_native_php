@@ -3,6 +3,7 @@
 preparation
 
 -------------------------------------------------*/
+
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
@@ -11,11 +12,13 @@ body {
   margin: 0;
 }
 
+
 /*-------------------------------------------------
 
 wrapper content
 
 -------------------------------------------------*/
+
 #container {
   margin: 0 auto;
   width: 1100px;
@@ -64,6 +67,7 @@ header
   vertical-align: bottom;
 }
 
+
 /*-------------------------------------------------
 
 content
@@ -74,6 +78,7 @@ content
   overflow: hidden;
   padding: 10px 0;
 }
+
 
 /*-------------------------------------------------
 
@@ -87,29 +92,32 @@ content register
   margin: 50px auto;
 }
 
-#container_user_akses .element_form {
+/*-------------------------------------------------
+
+From
+
+-------------------------------------------------*/
+
+.element_form {
   margin-bottom: 15px;
 }
 
-#container_user_akses .element_form label {
+.element_form label {
   display: block;
   font-weight: bold;
 }
 
-#container_user_akses .element_form span {
+.element_form span {
   display: block;
 }
 
-#container_user_akses .element_form span input[type="text"],
-#container_user_akses .element_form span input[type="password"],
-#container_user_akses .element_form span textarea,
-#container_user_akses .element_form span select {
+.element_form span input[type="text"], .element_form span input[type="password"], .element_form span textarea, .element_form span select {
   width: 100%;
   padding: 5px;
   box-sizing: border-box;
 }
 
-#container_user_akses .element_form span input[type="submit"] {
+.element_form span input[type="submit"] {
   background: #1e5474;
   color: white;
   border: none;
@@ -119,7 +127,7 @@ content register
   cursor: pointer;
 }
 
-#container_user_akses .element_form span input[type="submit"]:hover {
+.element_form span input[type="submit"]:hover {
   background: orange;
   transition: .2s ease-in-out all;
 }
@@ -131,11 +139,124 @@ content register
   margin-bottom: 10px;
   font-size: 11px;
 }
+
+/*-------------------------------------------------
+
+content my_profile
+
+-------------------------------------------------*/
+
+#bg_page_profile {
+  overflow: hidden;
+}
+
+#menu_profile {
+  float: left;
+  width: 245px;
+  background: #1e5474;
+}
+
+#menu_profile ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#menu_profile ul li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  -webkit-transition: all .25s ease-in-out;
+     -moz-transition: all .25s ease-in-out;
+      -ms-transition: all .25s ease-in-out;
+       -o-transition: all .25s ease-in-out;
+          transition: all .25s ease-in-out;
+}
+
+#menu_profile ul li a:hover,
+#menu_profile ul li a.active {
+  background: orange;
+
+}
+
+#profile_content {
+  float: left;
+  width: 835px;
+  padding: 10px;
+  background: white;
+}
+
+/*-------------------------------------------------
+
+content table kategori
+
+-------------------------------------------------*/
+
+#frame_tambah {
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.tombol_action {
+  background: #1e5474;
+  color: white;
+  padding: 7px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 3px;
+  -webkit-transition: all .25s ease-in-out;
+     -moz-transition: all .25s ease-in-out;
+      -ms-transition: all .25s ease-in-out;
+       -o-transition: all .25s ease-in-out;
+          transition: all .25s ease-in-out;
+  font-size: 9px;
+}
+
+.tombol_action:hover {
+  background: orange;
+}
+
+.table_list {
+  width: 100%;
+  border-collapse: collapse;
+
+}
+
+.title {
+  background: #E6E6E6;
+}
+
+.table_list th,
+.table_list td {
+  padding: 10px 7px;
+}
+
+.kolom_nomor {
+  widows: 20px;
+  text-align: center;
+}
+
+.kiri {
+  text-align: left;
+}
+
+.tengah {
+  text-align:  center;
+}
+
+.kanan {
+  text-align: right: 
+}
+
+
 /*-------------------------------------------------
 
 footer
 
 -------------------------------------------------*/
+
 #footer {
   background: #1e5475;
   padding: 10px;

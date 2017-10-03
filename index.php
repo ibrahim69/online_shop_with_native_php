@@ -3,6 +3,7 @@
   session_start();
 
   // include_once for access all code in folder
+  include_once("function/koneksi.php");
   include_once("function/helper.php");
 
   // isset -> cek variabel yang sudah diset.
@@ -32,13 +33,12 @@
           <div id="user">
             <?php
               if ($user_id) {
-                echo "HI <b>$nama</b>,
+                    echo "HI <b>$nama</b>,
                       <a href='".BASE_URL."index.php?page=my_profile&module=pesanan&action=list'>My Profile</a>
-                      <a href='".BASE_URL."logout.php'>Logout</a>
-                      ";
+                      <a href='".BASE_URL."logout.php'>Logout</a>";
               } else {
-                echo "<a href='".BASE_URL."index.php?page=login'>Login</a>
-                echo <a href='".BASE_URL."index.php?page=register'>Register</a>";
+                    echo "<a href='".BASE_URL."index.php?page=login'>Login</a>
+                          <a href='".BASE_URL."index.php?page=register'>Register</a>";
               }
              ?>
 
