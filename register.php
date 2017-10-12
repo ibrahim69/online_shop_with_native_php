@@ -1,5 +1,5 @@
 <?php
-// mengembalikan nilai jika user sudah login or register
+// mengembalikan nilai jika user belum login or register
   if ($user_id) {
     header("location: ".BASE_URL);
   }

@@ -94,7 +94,7 @@ content register
 
 /*-------------------------------------------------
 
-From
+Form
 
 -------------------------------------------------*/
 
@@ -250,6 +250,126 @@ content table kategori
   text-align: right: 
 }
 
+/*-------------------------------------------------
+
+content main kiri
+
+-------------------------------------------------*/
+#kiri {
+  width: 245px;
+  height: auto;
+  float: left;
+}
+
+#menu_kategori ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#menu_kategori ul li {
+  margin-bottom: 5px;
+}
+
+#menu_kategori ul li a {
+  display: block;
+  padding: 10px;
+  background: #FFF;
+  color: #1e5475;
+  text-decoration: none
+}
+
+#menu_kategori ul li a:hover,
+#menu_kategori ul li a.active {
+  background: #e8e8e8;
+}
+
+/*-------------------------------------------------
+
+content main kanan
+
+-------------------------------------------------*/
+
+#kanan {
+  width: 840px;
+  margin-left: 15px;
+  height: auto;
+  float: left;
+}
+
+#kanan #frame_barang ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#kanan #frame_barang ul li {
+  width: 240px;
+  background: #fff;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  margin-right: 15px;
+  float: left;
+}
+
+#kanan #frame_barang ul li .price {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+#kanan #frame_barang ul li img {
+  display: block;
+  width: 240px;
+  height: 200px;
+}
+
+#kanan #frame_barang ul li .keterangan_gambar {
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 10px 0;
+  height: 50px;
+}
+
+#kanan #frame_barang ul li .keterangan_gambar p {
+  text-align: center;
+  margin: 5px 0;
+}
+
+#kanan #frame_barang ul li .keterangan_gambar p a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#kanan #frame_barang ul li .keterangan_gambar span {
+  display: block;
+  text-align: center;
+}
+
+#kanan #frame_barang ul li .button_add_cart {
+  text-align: center;
+}
+
+#kanan #frame_barang ul li .button_add_cart a {
+  background: #1e5475;
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  display: inline-block;
+  margin-top: 10px;
+  border-radius: 3px;
+}
+
+#kanan #frame_barang ul li .button_add_cart a:hover {
+  background: orange;
+  -webkit-transition: all .25s ease-in-out;
+     -moz-transition: all .25s ease-in-out;
+      -ms-transition: all .25s ease-in-out;
+       -o-transition: all .25s ease-in-out;
+          transition: all .25s ease-in-out;
+}
 
 /*-------------------------------------------------
 

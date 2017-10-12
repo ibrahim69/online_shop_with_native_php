@@ -9,7 +9,7 @@
 
 	if ($button == 'Add') {
 			mysqli_query($koneksi, "INSERT INTO kategori(kategori, status) VALUES ('$kategori', '$status')");
-	} elseif ($button == 'Update') {
+	} else if ($button == 'Update') {
 		$kategori_id = $_GET['kategori_id'];
 
 		mysqli_query($koneksi, "UPDATE kategori SET kategori='$kategori', status='$status' WHERE kategori_id='$kategori_id'");

@@ -1,5 +1,7 @@
 <div id="frame_tambah">
-	<a href="<?php echo BASE_URL."index.php?page=my_profile&module=kategori&action=form"; ?>" class="tombol_action">+ Tambah Kategori</a>
+	<a href="<?php echo BASE_URL."index.php?page=my_profile&module=kategori&action=form"; ?>" class="tombol_action">
+		+ Tambah Kategori
+	</a>
 </div>
 
 <?php

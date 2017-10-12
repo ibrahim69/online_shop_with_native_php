@@ -4,29 +4,44 @@
 	$barang_id = isset($_GET['barang_id']) ? $_GET['barang_id'] : false;
 
 	$nama_barang = "";
+	$kategori_id = "";
 	$spesifikasi = "";
+	$gambar = "";
 	$stok = "";
 	$harga = "";
 	$status = "";
+	$keterangan_gambar = "";
 	$button = "Add";
 
-	// // pengecekan kedua
-	// if ($barang_id) {
+	// pengecekan kedua
+	if ($barang_id) {
 
-	// 	// digunakan u/mengambil nilai yang ada di URL
-	// 	$queryKategori = mysqli_query($koneksi, "SELECT * FROM kategori WHERE kategori_id='$kategori_id'");
+		// digunakan u/mengambil nilai yang ada di URL
+		$query = mysqli_query($koneksi, "SELECT * FROM barang WHERE barang_id='$barang_id'");
 
-	// 	// mengeluarkan datanya
-	// 	$row = mysqli_fetch_assoc($queryKategori);
+		// mengeluarkan datanya
+		$row = mysqli_fetch_assoc($query);
 
-	// 	// merubah variabel dengan nilai dari kolom kategori di dalam tabel (mysql) kategori
-	// 	$kategori = $row['kategori'];
-	// 	$status = $row['status'];
-	// 	$button = "Update";
+		// merubah variabel dengan nilai dari kolom barang di dalam tabel (mysql) barang
 
-	// }
+		// menampilkan data di database ke dalam form
+
+		$nama_barang = $row['nama_barang'];
+		$kategori_id = $row['kategori_id'];
+		$spesifikasi = $row['spesifikasi'];
+		$gambar = $row['gambar'];
+		$harga = $row['harga'];
+		$stok = $row['stok'];
+		$status = $row['status'];
+		$button = "Update";
+		$keterangan_gambar = "( Klik pilih gambar jika ingin mengganti gambar di samping )";
+		$gambar = "<img src='".BASE_URL."images/barang/$gambar' style='width: 300px; vertical-align: middle;'>";
+
+	}
 
 ?>
+
+<script src='<?php echo BASE_URL."js/ckeditor/ckeditor.js";?>'></script>
 
 <!-- enctype="multipart/form-data" digunakan untuk mengupload sebuah file kedalam server -->
 
@@ -35,11 +50,16 @@
 	<div class="element_form">
       <label>Kategori</label>
       <span>
-      	<select name="kategori_id" id="">
+      	<select name="kategori_id">
       		<?php
       			$query = mysqli_query($koneksi, "SELECT kategori_id, kategori FROM kategori WHERE status='on' ORDER BY kategori ASC");
       			while ($row=mysqli_fetch_assoc($query)) {
-      			    echo "<option value='$row[kategori_id]'>$row[kategori]</option>";
+      				// ketika edit barang memilih kategori secara otomatis
+      				if ($kategori_id == $row['kategori_id']) {
+      			    	echo "<option value='$row[kategori_id]' selected='true'>$row[kategori]</option>";
+      				} else {
+      			    	echo "<option value='$row[kategori_id]'>$row[kategori]</option>";
+      				}
       			}
       		?>
       	</select>
@@ -51,9 +71,9 @@
       <span><input type="text" name="nama_barang" value="<?php echo $nama_barang; ?>"></span>
     </div>
 
-    <div class="element_form">
-      <label>Spesifikasi</label>
-      <span><textarea name="spesifikasi"><?php echo $spesifikasi ?></textarea></span>
+    <div style="margin-bottom: 10px;">
+      <label style="font-weight: bold;">Spesifikasi</label>
+      <span><textarea name="spesifikasi" id="editor"><?php echo $spesifikasi ?></textarea></span>
     </div>
 
     <div class="element_form">
@@ -67,8 +87,10 @@
     </div>
 
     <div class="element_form">
-      <label>Gambar Produk</label>
-      <span><input type="file" name="file"></span>
+      <label>Gambar Produk <?php echo $keterangan_gambar; ?></label>
+      <span>
+      	<input type="file" name="file"> <?php echo $gambar; ?>
+      </span>
     </div>
 
     <div class="element_form">
@@ -84,3 +106,7 @@
     </div>
 
 </form>
+
+<script>
+  CKEDITOR.replace("editor");
+</script>
