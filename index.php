@@ -14,6 +14,8 @@
   $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : false;
   $nama = isset($_SESSION['nama']) ? $_SESSION['nama'] : false;
   $level = isset($_SESSION['level']) ? $_SESSION['level'] : false;
+  $keranjang = isset($_SESSION['keranjang']) ? $_SESSION['keranjang'] : array();
+  $totalBarang = count($keranjang);
 
 ?>
 
@@ -23,6 +25,23 @@
     <meta charset="utf-8">
     <title> weshop | barang-barang elektronik </title>
     <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL."css/style.css"; ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL."css/banner.css"; ?>">
+
+    <script src='<?php echo BASE_URL."js/jquery-3.2.1.min.js";?>'></script>
+    <script src='<?php echo BASE_URL."js/slides/source/jquery.slides.min.js";?>'></script>
+
+    <script>
+    $(function() {
+      $('#slides').slidesjs({
+        height: 350,
+        play : {
+              auto : true,
+              interval : 3000  
+        },
+        navigation: false
+      });
+    });
+  </script>
   </head>
   <body>
     <div id="container">
@@ -48,6 +67,11 @@
 
           <a href="<?php echo BASE_URL."index.php?page=cart";?>" id="button_cart">
             <img src="<?php echo BASE_URL."images/cart.png";?>" alt="cart">
+            <?php
+              if ($totalBarang != 0) {
+                echo "<span class='total_barang'>$totalBarang</span>";
+              }
+            ?>
           </a>
         </div>
       </div>

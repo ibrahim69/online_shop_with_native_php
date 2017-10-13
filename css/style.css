@@ -233,6 +233,10 @@ content table kategori
   padding: 10px 7px;
 }
 
+.table_list tr {
+  border-bottom: 1px solid #1e5475;
+}
+
 .kolom_nomor {
   widows: 20px;
   text-align: center;
@@ -247,7 +251,7 @@ content table kategori
 }
 
 .kanan {
-  text-align: right: 
+  text-align: right;
 }
 
 /*-------------------------------------------------
@@ -369,6 +373,154 @@ content main kanan
       -ms-transition: all .25s ease-in-out;
        -o-transition: all .25s ease-in-out;
           transition: all .25s ease-in-out;
+}
+
+/*-------------------------------------------------
+
+content detail barang
+
+-------------------------------------------------*/
+
+#detail_barang {
+  padding: 15px;
+  background: white;
+}
+
+#detail_barang h2 {
+  margin-top: 0;
+}
+
+#detail_barang #frame_gambar {
+  background: #FBFBFB;
+  padding: 20px;
+}
+
+#detail_barang #frame_gambar img {
+  display: block;
+  margin: 0 auto;
+}
+
+#detail_barang #frame_harga {
+  margin: 15px 0;
+}
+
+#detail_barang #frame_harga span {
+  font-size: 15px;
+  font-weight: bold;
+  color: red;
+}
+
+#detail_barang #frame_harga a {
+  background: #1e5474;
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  display: inline-block;
+  float: right;
+  border-radius: 3px;
+}
+
+#detail_barang #frame_harga a:hover {
+  background: orange;
+  -webkit-transition: all .25s ease-in-out;
+     -moz-transition: all .25s ease-in-out;
+      -ms-transition: all .25s ease-in-out;
+       -o-transition: all .25s ease-in-out;
+          transition: all .25s ease-in-out;
+}
+
+#detail_barang #keterangan {
+  margin: 20px 0;
+}
+
+/*-------------------------------------------------
+
+content keranjang
+
+-------------------------------------------------*/
+
+.total_barang {
+  color: white;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: bold;
+  vertical-align: top;
+}
+
+.baris_title {
+  background: #e4e4e4;
+}
+
+.update_quantity {
+  width: 30px;
+  text-align: center;
+}
+
+.hapus_item {
+  position: relative;
+}
+
+.hapus_item a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-decoration: none;
+  color: #1e5475;
+}
+
+/*-------------------------------------------------
+
+content pemesanan
+
+-------------------------------------------------*/
+
+#frame_button_keranjang a {
+  background: #1e5475;
+  color: white;
+  text-decoration: none;
+  padding: 7px 20px;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+#lanjut_belanja {
+  float: left;
+}
+
+#lanjut_pemesanan {
+  float: right;
+}
+
+/*-------------------------------------------------
+
+content pengiriman
+
+-------------------------------------------------*/
+.label_data_pengiriman {
+  border: 1px solid grey;
+  padding: 10px 7px;
+  margin: 0;
+}
+
+#frame_from_pengiriman_barang {
+  padding: 25px;
+  border: 1px solid grey;
+}
+
+#frame_data_pengiriman {
+  float: left;
+  width: 500px;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+
+#frame_data_detail {
+  float: left;
+  width: 560px;
+}
+
+#frame_detail_order {
+  border: 1px solid grey;
 }
 
 /*-------------------------------------------------
