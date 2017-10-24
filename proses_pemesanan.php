@@ -13,7 +13,7 @@
 	$user_id = $_SESSION['user_id'];
 	$waktu_saat_ini = date("Y-m-d H:i:s");
 
-	$query = mysqli_query($koneksi, "INSERT INTO pesanan (nama_penerima, user_id, nomor_telepon, kota_id, alamat, tanggal_pemesanan, status) VALUES ('$nama_penerima', '$user_id', '$nomor_telepon', '$kota','$alamat', '$waktu_saat_ini', '0')");
+	$query = mysqli_query($koneksi, "INSERT INTO pesanan (nama_penerima, user_id, nomor_telepon, kota_id, alamat, tanggal_pesanan, status) VALUES ('$nama_penerima', '$user_id', '$nomor_telepon', '$kota','$alamat', '$waktu_saat_ini', '0')");
 
 	if ($query) {
 		$last_pesanan_id = mysqli_insert_id($koneksi);
@@ -25,7 +25,7 @@
 			$quantity = $value['quantity'];
 			$harga = $value['harga'];
 
-			mysqli_query($koneksi, "INSERT INTO pesanan_detail(pesanan_id, barang_id, quantity, harga) VALUES ('$last_pesanan_id', '$barang_id', '$quantity', '$harga')");
+			mysqli_query($koneksi, "INSERT INTO pesanan_detail ( pesanan_id, barang_id, quantity, harga ) VALUES ( '$last_pesanan_id', '$barang_id', '$quantity', '$harga' )");
 		}
 
 		unset($_SESSION["keranjang"]);

@@ -1,6 +1,6 @@
 <?php
 	
-	// mengecek apakah ada data 'nama_data' jika ada akan digunakan nilainya
+	// mengecek apakah ada data 'kota_id' jika ada akan digunakan nilainya
 	$kota_id = isset($_GET['kota_id']) ? $_GET['kota_id'] : false;
 
 	$kota = "";

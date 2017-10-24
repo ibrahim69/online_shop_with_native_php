@@ -2,6 +2,8 @@
 
   define('BASE_URL', 'http://localhost/toko_online_wegodev/');
 
+  $arrayStatusPesanan = ["Menunggu Pembayaran", "Pembayaran Sedang di Validasi", "Lunas", "Pembayaran di Tolak"];
+
   function rupiah($nilai = 0)
   {
   	$string = "Rp," . number_format($nilai);
@@ -21,14 +23,15 @@
 				$query = mysqli_query($koneksi, "SELECT * FROM kategori WHERE status='on'");
 
 				while ($row = mysqli_fetch_assoc($query) ) {
+				$kategori = strtolower($row['kategori']);
 
 					if ($kategori_id == $row['kategori_id']) {
 						$string .= "<li>
-								<a href='".BASE_URL."index.php?kategori_id=$row[kategori_id]' class='active'>$row[kategori]</a>
+								<a href='".BASE_URL."$row[kategori_id]/$kategori.html' class='active'>$row[kategori]</a>
 							</li>";
 					} else {
 					    $string .= "<li>
-								<a href='".BASE_URL."index.php?kategori_id=$row[kategori_id]'>$row[kategori]</a>
+								<a href='".BASE_URL."$row[kategori_id]/$kategori.html'>$row[kategori]</a>
 					    	</li>";
 					}
 
